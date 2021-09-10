@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ArticlesScreen} from '../components/Articles';
-import {VideosScreen} from '../components/Videos';
+import {ArticlesScreen} from '../components/articles/ArticlesScreen';
+import {VideosScreen} from '../components/videos/VideosScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {theme} from '../constants/theme';
 import {Box} from 'react-native-design-utility';
