@@ -1,10 +1,10 @@
 import React from 'react';
 import {Box, Text} from 'react-native-design-utility';
 
-export const DetailsScreen = () => {
+export const ArticlesScreen = () => {
   return (
     <Box flex={1} center>
-      <Text>Details Screen</Text>
+      <Text>Articles Screen</Text>
     </Box>
   );
 };

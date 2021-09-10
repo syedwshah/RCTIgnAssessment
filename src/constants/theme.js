@@ -1,5 +1,6 @@
 const color = {
   black: '#212121',
+  ignBlack: '#000000',
 
   greyDarkest: '#242424',
   greyDarker: '#616161',
@@ -11,6 +12,7 @@ const color = {
 
   white: '#fff',
 
+  ignRed: '#D51D29',
   redDarkest: '#b71c1c',
   redDarker: '#c62828',
   redDark: '#d32f2f',

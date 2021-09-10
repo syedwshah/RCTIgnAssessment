@@ -1,10 +1,10 @@
 import React from 'react';
 import {Box, Text} from 'react-native-design-utility';
 
-export const HomeScreen = () => {
+export const VideosScreen = () => {
   return (
     <Box flex={1} center>
-      <Text>Home Screen</Text>
+      <Text>Videos Screen</Text>
     </Box>
   );
 };
