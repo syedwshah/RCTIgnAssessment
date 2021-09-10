@@ -1,14 +1,17 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {UtilityThemeProvider} from 'react-native-design-utility';
+import {theme} from './src/constants/theme';
+import {NavigationContainer} from '@react-navigation/native';
+import MainStackNavigator from './src/navigators/MainStackNavigator';
 
 const App = () => {
-  return <SafeAreaView style={styles.safeArea} />;
+  return (
+    <UtilityThemeProvider theme={theme}>
+      <NavigationContainer>
+        <MainStackNavigator />
+      </NavigationContainer>
+    </UtilityThemeProvider>
+  );
 };
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
-});
 
 export default App;
