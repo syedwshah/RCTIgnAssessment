@@ -1,11 +1,11 @@
 import React from 'react';
-
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Box} from 'react-native-design-utility';
+
 import {ArticlesScreen} from '../components/articles/ArticlesScreen';
 import {VideosScreen} from '../components/videos/VideosScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {theme} from '../constants/theme';
-import {Box} from 'react-native-design-utility';
 
 const SCREEN_OPTIONS: any = {
   headerTitle: 'IGN',

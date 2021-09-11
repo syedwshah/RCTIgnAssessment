@@ -12,7 +12,7 @@ const color = {
 
   white: '#fff',
 
-  ignRed: '#D51D29',
+  ignRed: '#c00f18',
   redDarkest: '#b71c1c',
   redDarker: '#c62828',
   redDark: '#d32f2f',
