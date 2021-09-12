@@ -1,6 +1,8 @@
 import React from 'react';
 import {Image, StyleSheet, Dimensions} from 'react-native';
 import {Text, Box} from 'react-native-design-utility';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import {CardFooter} from '../../commons/CardFooter';
 import {theme} from '../../constants/theme';
 
@@ -16,9 +18,9 @@ export const ArticleNoDescription: React.FC<{data: any}> = ({data}) => {
         <Image source={{uri: data.thumbnails[1].url}} style={s.imageStyle} />
       </Box>
 
-      <Box pt="xs" px="md">
+      <Box pt="md" px="md">
         <Text weight="900" size="xl">
-          {data[1]?.metadata.headline}
+          {data.metadata.headline}
         </Text>
       </Box>
 
@@ -50,11 +52,34 @@ export const ArticleNoDescription: React.FC<{data: any}> = ({data}) => {
           <CardFooter />
         </Box>
       </Box>
+
+      {/* Absolute positioned Hexagon */}
+      <Box f={1} position="absolute" style={s.hexagonPosition}>
+        <Box flexDirection="row" center>
+          <Icon name="hexagon" color={theme.color.ignRed} size={75} />
+          <Box position="absolute">
+            <Box center>
+              <Icon
+                name="hexagon-outline"
+                color={theme.color.white}
+                size={30}
+              />
+              <Box position="absolute" pr={3}>
+                <Icon name="format-align-left" color={theme.color.white} />
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
 
 const s = StyleSheet.create({
+  hexagonPosition: {
+    marginLeft: windowWidth * 0.4,
+    marginTop: windowHeight * 0.24,
+  },
   imageStyle: {
     width: windowWidth * 0.96,
     height: windowHeight * 0.3,

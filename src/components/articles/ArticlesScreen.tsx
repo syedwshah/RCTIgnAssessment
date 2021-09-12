@@ -10,7 +10,7 @@ export const ArticlesScreen = () => {
   const [isLoading, setLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState<any[]>([]);
-  const url = 'https://ign-apis.herokuapp.com/articles?startIndex=30&count=15';
+  const url = 'https://ign-apis.herokuapp.com/articles?startIndex=34&count=15';
 
   useEffect(() => {
     (async () => {

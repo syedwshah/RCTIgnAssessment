@@ -1,5 +1,6 @@
 import React from 'react';
 import {Box, Text} from 'react-native-design-utility';
+import Icon from 'react-native-vector-icons/Feather';
 
 import {theme} from '../constants/theme';
 
@@ -23,7 +24,10 @@ export const CardFooter = () => {
         />
       </Box>
 
-      <Box>
+      <Box flexDirection="row" center>
+        <Box pr="xs">
+          <Icon name="message-square" size={theme.text.size.lg} />
+        </Box>
         <Text size="sm" bold>
           {971}
         </Text>

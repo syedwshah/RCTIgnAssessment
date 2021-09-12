@@ -1,6 +1,7 @@
 import React from 'react';
 import {Dimensions, Image, StyleSheet} from 'react-native';
 import {Text, Box} from 'react-native-design-utility';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {CardFooter} from '../../commons/CardFooter';
 import {theme} from '../../constants/theme';
 
@@ -20,11 +21,27 @@ export const VideoCard: React.FC<{data: any}> = ({data}) => {
       </Box>
 
       <CardFooter />
+
+      {/* Absolute positioned icons */}
+      <Box f={1} position="absolute" style={s.hexagonPosition}>
+        <Box flexDirection="row" center>
+          <Icon name="circle" color={theme.color.ignRed} size={75} />
+          <Box position="absolute">
+            <Box pl="xs">
+              <Icon name="play-outline" color={theme.color.white} size={45} />
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
 
 const s = StyleSheet.create({
+  hexagonPosition: {
+    marginLeft: theme.space.sm,
+    marginTop: windowHeight * 0.25,
+  },
   imageStyle: {
     width: windowWidth * 0.915,
     height: windowHeight * 0.3,
