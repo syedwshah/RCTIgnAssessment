@@ -8,7 +8,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export const VideoCard: React.FC<{data: any}> = ({data}) => {
-  console.log('videos', data);
+  console.log('videos', data.assets[0]);
   return (
     <Box p="xs">
       <Box radius="xs" py="xs">
