@@ -7,17 +7,6 @@ import {ArticlesScreen} from '../components/articles/ArticlesScreen';
 import {VideosScreen} from '../components/videos/VideosScreen';
 import {theme} from '../constants/theme';
 
-const SCREEN_OPTIONS: any = {
-  headerTitle: 'IGN',
-  headerStyle: {backgroundColor: theme.color.ignRed},
-  headerTitleStyle: {
-    color: theme.color.white,
-    fontWeight: 'bold',
-    fontSize: 28,
-    paddingBottom: 12,
-  },
-};
-
 const OPTIONS: any = {
   tabBarIcon: () => <Box />,
   tabBarLabelStyle: {
@@ -48,7 +37,17 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={SCREEN_OPTIONS}>
+    <Tab.Navigator
+      screenOptions={{
+        headerTitle: 'IGN',
+        headerStyle: {backgroundColor: theme.color.ignRed},
+        headerTitleStyle: {
+          color: theme.color.white,
+          fontWeight: 'bold',
+          fontSize: 28,
+          paddingBottom: 12,
+        },
+      }}>
       <Tab.Screen
         name="ArticlesStack"
         component={ArticlesStackScreen}
