@@ -3,6 +3,7 @@ import {ActivityIndicator, StyleSheet, FlatList} from 'react-native';
 import {Box, Text} from 'react-native-design-utility';
 
 import {theme} from '../../constants/theme';
+import {VideoCard} from './VideoCard';
 
 export const VideosScreen = () => {
   const [isLoading, setLoading] = useState(true);
@@ -54,19 +55,27 @@ export const VideosScreen = () => {
                 borderWidth: StyleSheet.hairlineWidth,
                 borderColor: theme.color.greyLight,
               }}>
-              {/* Cards go here */}
+              <VideoCard data={item} />
             </Box>
           )}
           ListHeaderComponent={() => (
             <Box px="sm" py="xs">
-              <Text uppercase size={10} bold color={theme.color.ignRed}>
+              <Text
+                uppercase
+                size={theme.text.size.xs}
+                bold
+                color={theme.color.ignRed}>
                 5 mins ago
               </Text>
             </Box>
           )}
           ItemSeparatorComponent={() => (
             <Box px="sm" pt="md" pb="xs">
-              <Text uppercase size={10} bold color={theme.color.ignRed}>
+              <Text
+                uppercase
+                size={theme.text.size.xs}
+                bold
+                color={theme.color.ignRed}>
                 5 mins ago
               </Text>
             </Box>

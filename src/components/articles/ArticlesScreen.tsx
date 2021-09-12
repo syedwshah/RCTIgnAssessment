@@ -65,14 +65,22 @@ export const ArticlesScreen = () => {
           )}
           ListHeaderComponent={() => (
             <Box px="sm" py="xs">
-              <Text uppercase size={10} bold color={theme.color.ignRed}>
+              <Text
+                uppercase
+                size={theme.text.size.xs}
+                bold
+                color={theme.color.ignRed}>
                 5 mins ago
               </Text>
             </Box>
           )}
           ItemSeparatorComponent={() => (
             <Box px="sm" pt="md" pb="xs">
-              <Text uppercase size={10} bold color={theme.color.ignRed}>
+              <Text
+                uppercase
+                size={theme.text.size.xs}
+                bold
+                color={theme.color.ignRed}>
                 5 mins ago
               </Text>
             </Box>

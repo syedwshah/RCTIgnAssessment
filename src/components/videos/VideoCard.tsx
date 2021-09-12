@@ -7,37 +7,16 @@ import {theme} from '../../constants/theme';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export const ArticleDescription: React.FC<{data: any}> = ({data}) => {
-  const authors = data.authors[0];
-
+export const VideoCard: React.FC<{data: any}> = ({data}) => {
+  console.log('videos', data);
   return (
     <Box p="xs">
-      <Text weight="900" size="xl">
-        {data.metadata.headline}
-      </Text>
       <Box radius="xs" py="xs">
-        <Image source={{uri: data.thumbnails[1].url}} style={s.imageStyle} />
+        <Image source={{uri: data.thumbnails[1]?.url}} style={s.imageStyle} />
       </Box>
 
       <Box p="xs">
-        <Text size="sm">{data.metadata.description}</Text>
-      </Box>
-
-      <Box flexDirection="row" justifyContent="start" alignItems="center">
-        <Box p="xs">
-          {authors?.thumbnail ? (
-            <Image source={{uri: authors.thumbnail}} style={s.thumbnail} />
-          ) : (
-            <Box style={s.noThumnail} />
-          )}
-        </Box>
-
-        <Text fontWeight="500" size="sm">
-          By{' '}
-        </Text>
-        <Text fontWeight="500" size="sm" deco="underline">
-          {authors?.name ?? 'Unknown author'}
-        </Text>
+        <Text size="sm">{data.metadata.title}</Text>
       </Box>
 
       <CardFooter />

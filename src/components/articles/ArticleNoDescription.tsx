@@ -8,10 +8,12 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export const ArticleNoDescription: React.FC<{data: any}> = ({data}) => {
+  const authors = data.authors[0];
+
   return (
     <Box>
       <Box radius="xs">
-        <Image source={{uri: data?.thumbnails[1].url}} style={s.imageStyle} />
+        <Image source={{uri: data.thumbnails[1].url}} style={s.imageStyle} />
       </Box>
 
       <Box pt="xs" px="md">
@@ -22,11 +24,8 @@ export const ArticleNoDescription: React.FC<{data: any}> = ({data}) => {
 
       <Box flexDirection="row" center p="sm">
         <Box px="xs">
-          {data.authors[0]?.thumbnail ? (
-            <Image
-              source={{uri: data.authors[0]?.thumbnail}}
-              style={s.thumbnail}
-            />
+          {authors?.thumbnail ? (
+            <Image source={{uri: authors.thumbnail}} style={s.thumbnail} />
           ) : (
             <Box style={s.noThumnail} />
           )}
@@ -36,7 +35,7 @@ export const ArticleNoDescription: React.FC<{data: any}> = ({data}) => {
           By{' '}
         </Text>
         <Text fontWeight="500" size="sm" deco="underline">
-          {data.authors[0]?.name ?? 'Unknown author'}
+          {authors?.name ?? 'Unknown author'}
         </Text>
       </Box>
 
