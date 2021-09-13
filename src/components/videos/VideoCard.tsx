@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Dimensions, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {Text, Box} from 'react-native-design-utility';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -6,15 +6,16 @@ import {useNavigation} from '@react-navigation/native';
 
 import {CardFooter} from '../../commons/CardFooter';
 import {theme} from '../../constants/theme';
-import WebView from 'react-native-webview';
+// import WebView from 'react-native-webview';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export const VideoCard: React.FC<{data: any}> = ({data}) => {
-  // console.log('video url', data.assets[1].url);
   const navigation = useNavigation();
-  const [videoToggle, setVideoToggle] = useState(false);
+  // const [videoToggle, setVideoToggle] = React.useState(false);
+
+  useEffect(() => {}, []);
 
   return (
     <Box p="xs">
@@ -24,11 +25,8 @@ export const VideoCard: React.FC<{data: any}> = ({data}) => {
           <Image source={{uri: data.thumbnails[1]?.url}} style={s.imageStyle} />
         ) : (
           <Box>
-            <Image
-              source={{uri: data.thumbnails[1]?.url}}
-              style={s.imageStyle}
-            />
-            <WebView source={{uri: data.assets[1].url}} />
+            <Box backgroundColor={theme.color.ignBlack} style={s.imageStyle} />
+            <WebView source={{uri: data.assets[1].url}} allowsFullscreenVideo />
           </Box>
         )} */}
       </Box>

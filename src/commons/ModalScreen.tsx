@@ -1,7 +1,7 @@
 import {useNavigation, useRoute} from '@react-navigation/core';
 import React from 'react';
 import {ActivityIndicator, StyleSheet, TouchableOpacity} from 'react-native';
-import {Box, Text} from 'react-native-design-utility';
+import {Box} from 'react-native-design-utility';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
 import WebView from 'react-native-webview';
@@ -22,11 +22,12 @@ export const ModalScreen = () => {
           </TouchableOpacity>
         </Box>
         <Box center>
-          <ActivityIndicator />
           <WebView
             source={{uri: routeParams.uri}}
             startInLoadingState={true}
-            renderLoading={() => <ActivityIndicator />}
+            renderLoading={() => (
+              <ActivityIndicator color={theme.color.ignRed} />
+            )}
           />
         </Box>
       </Box>
